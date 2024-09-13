@@ -4,7 +4,7 @@
       <h1
         class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
       >
-        Upcoming Movies
+        Now Playing Movies
       </h1>
 
       <ul class="grid grid-cols-5 gap-1">
@@ -27,9 +27,9 @@
 <script setup>
 const movies = useState(() => {});
 
-const { data } = await useFetch("/api/movies/upcoming", {
+const { data } = await useFetch("/api/movies/nowplaying", {
   transform: (data) => {
-    movies.value = data.upcomingMovies.results;
+    movies.value = data.nowPlayingMovies.results;
   },
 });
 </script>
